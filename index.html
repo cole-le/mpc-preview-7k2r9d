@@ -60,10 +60,11 @@ section{scroll-margin-top:84px}
 .hero{position:relative;color:#fff;background:var(--night);overflow:hidden}
 .hero-bg{position:absolute;inset:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,color-mix(in srgb,var(--night) 94%,transparent) 0%,color-mix(in srgb,var(--night) 76%,transparent) 40%,color-mix(in srgb,var(--night) 44%,transparent) 70%,color-mix(in srgb,var(--night) 62%,transparent) 100%),linear-gradient(180deg,transparent 55%,color-mix(in srgb,var(--night) 84%,transparent) 100%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,color-mix(in srgb,var(--night) 84%,transparent) 0%,color-mix(in srgb,var(--night) 70%,transparent) 34%,color-mix(in srgb,var(--night) 20%,transparent) 60%,transparent 84%),linear-gradient(180deg,transparent 66%,color-mix(in srgb,var(--night) 52%,transparent) 100%)}
 .hero-bg.plain::after,.hero-bg.nopic::after{background:radial-gradient(90% 120% at 82% 20%,color-mix(in srgb,var(--accent) 34%,transparent) 0%,transparent 60%),radial-gradient(70% 90% at 10% 100%,color-mix(in srgb,var(--deep) 60%,transparent) 0%,transparent 62%)}
 .hero-in{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:center;min-height:min(84vh,800px);padding-top:72px;padding-bottom:92px}
 .hero .eyebrow{color:var(--accent)}
+.hero-bg img{filter:brightness(1.06) saturate(1.05)}.hero h1,.hero p.sub,.hero .eyebrow,.hero .hero-note,.hero .bookcard-cap{text-shadow:0 2px 18px rgba(0,0,0,.6),0 1px 3px rgba(0,0,0,.55)}.hero p.sub,.hero .hero-note,.hero .bookcard-cap{color:#fff}.hero .btn-ghost{background:rgba(0,0,0,.36);border-color:rgba(255,255,255,.72)}.hero .bookcard-cap{background:rgba(0,0,0,.36);border-radius:14px;padding:10px 14px}
 .hero h1{font-size:clamp(42px,6vw,88px);margin:18px 0 22px}
 .hero h1 em{font-style:italic;color:var(--hi)}
 .hero p.sub{font-size:clamp(17px,1.5vw,20px);line-height:1.6;max-width:56ch;color:#ece5d8;margin-bottom:30px}
@@ -140,6 +141,11 @@ section{scroll-margin-top:84px}
 .person-pic{position:relative;width:112px;aspect-ratio:1/1.16;border-radius:12px;overflow:hidden;background:var(--night);display:grid;place-items:center}
 .person-pic i{font:800 30px/1 var(--display);font-style:normal;color:var(--accent);letter-spacing:.02em}
 .person-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.person-l{display:inline-block;margin-top:8px;font-size:13.5px;font-weight:600;color:var(--deep);text-decoration:none;border-bottom:1px solid currentColor}
+.story-2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+.story-2 figure{margin:0}.story-2 img{display:block;width:100%;border-radius:16px}.story-2 figcaption{font-size:13px;line-height:1.45;color:#6b6457;margin-top:10px}
+@media (max-width:820px){.story-2{grid-template-columns:1fr;gap:28px}}
+.hero-bg img{filter:brightness(1.12) saturate(1.1)}.gal img,.story-2 img{filter:brightness(1.07) saturate(1.1)}
 .person-t{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--deep);font-weight:700;margin:6px 0 8px;line-height:1.35}
 .person p{margin:0;font-size:14.5px;line-height:1.5;color:#40382f}
 @media (max-width:900px){.people{grid-template-columns:1fr}}
@@ -381,8 +387,14 @@ body.lb-lock{overflow:hidden}
 .fbk-btn.is-on{background:var(--fb-accent);border-color:var(--fb-accent);color:#1b1612}
 .fbk-btn svg{width:16px;height:16px;flex:none}
 .fbk-label{min-width:104px;text-align:center;letter-spacing:.06em;opacity:.85;font-variant-numeric:tabular-nums}
-.fbk-range{width:min(26vw,220px);accent-color:var(--fb-accent)}
-@media (max-width:640px){.fbk-range{display:none}.fbk-btn span{display:none}.fbk-btn{padding:0 12px}}
+.fbk-range{width:min(22vw,200px);accent-color:var(--fb-accent)}
+.fbk-btn.is-first,.fbk-btn.is-last{padding:0 11px}
+.fbk-btn.is-muted{opacity:.6}
+@media (max-width:1040px){.fbk-range{display:none}}
+@media (max-width:780px){.fbk-btn span{display:none}.fbk-btn{padding:0 12px}}
+@media (max-width:640px){.fbk-bar{gap:6px;padding-left:8px;padding-right:8px}.fbk-btn,.fbk-btn.is-first{padding:0 10px;height:36px}
+  .fbk-label{min-width:64px;font-size:12px;letter-spacing:.03em}.fbk-btn.is-last{display:none}}
+@media (max-width:350px){.fbk-btn.is-snd{display:none}}
 
 /* contents drawer and popover */
 .fbk-toc,.fbk-pop{position:absolute;z-index:30;background:#fffdf8;color:#1d1a16;box-shadow:0 24px 70px rgba(0,0,0,.45);
@@ -583,6 +595,11 @@ body.lb-lock{overflow:hidden}
 .vid{position:relative;aspect-ratio:16/9;border-radius:14px;background:linear-gradient(140deg,var(--deep),var(--night));display:grid;place-items:center;color:#fff;margin:14px 0 4px;text-align:center}
 .vid svg{width:54px;height:54px;background:rgba(255,255,255,.16);border-radius:50%;padding:14px}
 .vid span{position:absolute;left:14px;right:14px;bottom:12px;font-size:12.5px;opacity:.85}
+.vid.has-v{width:100%;border:0;padding:0;overflow:hidden;cursor:pointer;font:inherit}
+.vid.has-v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid.has-v svg{position:relative;background:rgba(0,0,0,.5)}
+.vid.has-v span{left:0;right:0;bottom:0;padding:26px 14px 11px;text-align:left;font-size:13px;opacity:1;background:linear-gradient(180deg,transparent,rgba(0,0,0,.78))}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .err{min-height:20px;margin-top:10px;font-size:13.5px;color:#c62828}
 .acts{display:flex;gap:10px;margin-top:8px}
 .acts .btn{flex:1;justify-content:center}
@@ -674,12 +691,12 @@ body.lb-lock{overflow:hidden}
 
 <section class="sec" id="people"><div class="wrap">
   <div class="sec-head"><div class="eyebrow">People</div><h2>The people behind the programme</h2></div>
-  <div class="people"><article class="person"><span class="person-pic" data-pic><i>AM</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/Mr.%20Andjelo.jpeg" alt="Andjelo Cherty Mwembya" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Andjelo Cherty Mwembya</h3><div class="person-t">Founder and Managing Director, REA Immo · Board Member, EIG LLC</div><p>26+ years across real estate, IT and telecom, energy, trading and mining, including Parsons Inc and Vodacom Congo. B.S. Electrical and Computer Engineering, University of North Carolina at Charlotte. Mentor to emerging entrepreneurs; active with the Young African Diaspora Initiative.</p></div></article><article class="person"><span class="person-pic" data-pic><i>MT</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/Muriel%20Headshot.jpg" alt="Mahele Muriel Tshita" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Mahele Muriel Tshita</h3><div class="person-t">Board Member and DR Congo Deputy Managing Director, REA Immo · 16+ years in real estate; George Mason and Indiana Kelley</div></div></article><article class="person"><span class="person-pic" data-pic><i>OE</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/E9.jpg" alt="Dr. Onuoha J. Emerem, MBA" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Dr. Onuoha J. Emerem, MBA</h3><div class="person-t">Board Member and Strategic Financial Advisor, REA Immo · 30+ years in management; board member, CEIDI</div></div></article><article class="person"><span class="person-pic" data-pic><i>NM</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/Mbuyi-Nadine-New.jpeg" alt="Dr. Nadine Ndelela Mbuyi, MD" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Dr. Nadine Ndelela Mbuyi, MD</h3><div class="person-t">Deputy Chair and Director of Healthcare, REA Immo · Associate Professor of Medicine, George Washington University</div></div></article><article class="person"><span class="person-pic" data-pic><i>JE</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/IMG-20210228-WA0002.jpg" alt="Jean Louis Lofete Eale" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Jean Louis Lofete Eale</h3><div class="person-t">Board Member, REA Immo · Engineer; former Nestlé Lubumbashi sales manager</div></div></article><article class="person"><span class="person-pic" data-pic><i>MN</i><img src="https://img1.wsimg.com/isteam/ip/26ad6a9d-2e5a-438f-94b1-515a5dbe8966/73457c1e-e30a-4b6f-a4ce-11016a644494.jpeg" alt="Mukuna &quot;Valentin&quot; N'Senga" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Mukuna &quot;Valentin&quot; N'Senga</h3><div class="person-t">Board Member, EIG LLC · Project Coordinator, Maluku Preserve City</div></div></article></div>
+  <div class="people"><article class="person"><span class="person-pic" data-pic><i>AM</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/Mr.%20Andjelo.jpeg" alt="Andjelo Cherty Mwembya" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Andjelo Cherty Mwembya</h3><div class="person-t">Founder and Managing Director, REA Immo · Board Member, EIG LLC</div><p>26+ years across real estate, IT and telecom, energy, trading and mining, including Parsons Inc and Vodacom Congo. B.S. Electrical and Computer Engineering, University of North Carolina at Charlotte. Mentor to emerging entrepreneurs; active with the Young African Diaspora Initiative.</p><a class="person-l" href="https://www.linkedin.com/in/andjelocm/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article><article class="person"><span class="person-pic" data-pic><i>MT</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/Muriel%20Headshot.jpg" alt="Mahele Muriel Tshita" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Mahele Muriel Tshita</h3><div class="person-t">Board Member and DR Congo Deputy Managing Director, REA Immo · 16+ years in real estate; George Mason and Indiana Kelley</div><a class="person-l" href="https://www.linkedin.com/in/mtshita/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article><article class="person"><span class="person-pic" data-pic><i>OE</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/E9.jpg" alt="Dr. Onuoha J. Emerem, MBA" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Dr. Onuoha J. Emerem, MBA</h3><div class="person-t">Board Member and Strategic Financial Advisor, REA Immo · 30+ years in management; board member, CEIDI</div></div></article><article class="person"><span class="person-pic" data-pic><i>NM</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/Mbuyi-Nadine-New.jpeg" alt="Dr. Nadine Ndelela Mbuyi, MD" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Dr. Nadine Ndelela Mbuyi, MD</h3><div class="person-t">Deputy Chair and Director of Healthcare, REA Immo · Associate Professor of Medicine, George Washington University</div><a class="person-l" href="https://www.linkedin.com/in/nadinembuyi/" target="_blank" rel="noopener">LinkedIn ↗</a></div></article><article class="person"><span class="person-pic" data-pic><i>JE</i><img src="https://img1.wsimg.com/isteam/ip/38ff743f-82ce-44cf-8044-15dcb2fb3b96/IMG-20210228-WA0002.jpg" alt="Jean Louis Lofete Eale" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Jean Louis Lofete Eale</h3><div class="person-t">Board Member, REA Immo · Engineer; former Nestlé Lubumbashi sales manager</div></div></article><article class="person"><span class="person-pic" data-pic><i>MN</i><img src="https://img1.wsimg.com/isteam/ip/26ad6a9d-2e5a-438f-94b1-515a5dbe8966/73457c1e-e30a-4b6f-a4ce-11016a644494.jpeg" alt="Mukuna &quot;Valentin&quot; N'Senga" loading="lazy" decoding="async" onerror="this.closest('[data-pic]').classList.add('nopic')"></span><div><h3>Mukuna &quot;Valentin&quot; N'Senga</h3><div class="person-t">Board Member, EIG LLC · Project Coordinator, Maluku Preserve City</div></div></article></div>
 </div></section>
 
 <section class="sec alt" id="story"><div class="wrap">
   <div class="sec-head"><div class="eyebrow">The story</div><h2>2001 to 2023</h2></div>
-  <ol class="tl"><li><b>2001</b><span>EIG LLC founded</span></li><li><b>2010</b><span>Real estate expansion</span></li><li><b>2021</b><span>Joins REA Immo</span></li><li><b>2022</b><span>450.3 ha acquired</span></li><li><b>2023</b><span>Maluku Preserve City</span></li></ol>
+  <div class="story-2"><ol class="tl"><li><b>2001</b><span>EIG LLC founded</span></li><li><b>2010</b><span>Real estate expansion</span></li><li><b>2021</b><span>Joins REA Immo</span></li><li><b>2022</b><span>450.3 ha acquired</span></li><li><b>2023</b><span>Maluku Preserve City</span></li></ol><aside><figure><img src="https://img1.wsimg.com/isteam/ip/29aa8cef-c9ba-486f-8345-80b2565cf302/unnamed-5.png" alt="Tall grass and young palms in front of the river and a flat-topped hill" loading="lazy" onerror="this.closest('figure').remove()"><figcaption>The land at Maluku: tall grass and young palms, the river and a flat-topped hill. REA Immo's own photograph.</figcaption></figure></aside></div>
 </div></section>
 
 
@@ -896,11 +913,11 @@ body.lb-lock{overflow:hidden}
     <div class="f"><label for="jEmail">Email</label><input class="in" id="jEmail" name="email" type="email" autocomplete="email" inputmode="email" required></div>
   </div>
   <div data-step="2" hidden>
-    <div class="eyebrow">Step 2 of 4</div><h3><span data-hello>Welcome</span></h3><p>A short welcome: what this programme is, and who is behind it.</p>
+    <div class="eyebrow">Step 2 of 4</div><h3><span data-hello>Congratulations</span>. You are in.</h3><p>A short welcome: what this programme is, and who is behind it.</p>
     <div class="vid"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.500v13l11-6.500z"/></svg><span>The welcome video goes here.</span></div>
   </div>
   <div data-step="3" hidden>
-    <div class="eyebrow">Step 3 of 4</div><h3>A little about you</h3><p>So the right partners, sponsors and customers can find you.</p>
+    <div class="eyebrow">Step 3 of 4</div><h3>A little about you</h3><p>Please fill out the form below to help us serve you better. It is how the right partners, sponsors and customers find you.</p>
     <div class="f"><label for="jPhone">Mobile phone</label><input class="in" id="jPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
     <div class="f"><label for="jOrg">Your organisation and your role</label><input class="in" id="jOrg" name="org" autocomplete="organization"></div>
     <div class="f"><label for="jWeb">Your website</label><input class="in" id="jWeb" name="web" type="url" inputmode="url" placeholder="https://"></div>
@@ -947,6 +964,10 @@ function FlipBook(root, opts) {
     next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>',
     list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>',
     ear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9a4 4 0 010 6M19.5 6.5a8 8 0 010 11"/></svg>',
+    first: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l-7 7 7 7M19 5l-7 7 7 7"/></svg>',
+    last: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l7 7-7 7M12 5l7 7-7 7"/></svg>',
+    snd: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>',
+    mute: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/><path d="M3 3l18 18"/></svg>',
   };
   root.textContent = "";
   root.classList.add("fbk", "is-booting");
@@ -971,7 +992,11 @@ function FlipBook(root, opts) {
   const label = el("div", "fbk-label"), range = el("input", "fbk-range");
   range.type = "range"; range.min = 0; range.max = S; range.step = 1; range.setAttribute("aria-label", "Page");
   bPrev.setAttribute("aria-label", "Previous page"); bNext.setAttribute("aria-label", "Next page");
-  bar.append(bToc, bPrev, label, bNext, range, bEar);
+  // the double arrows jump to the front and the back of the book; the note switches the page-turn sound (David, 2026-11-16)
+  const bFirst = el("button", "fbk-btn is-first", ICON.first), bLast = el("button", "fbk-btn is-last", ICON.last), bSnd = el("button", "fbk-btn is-snd");
+  bFirst.setAttribute("aria-label", "Back to the front cover"); bFirst.title = "Front cover";
+  bLast.setAttribute("aria-label", "Go to the back cover"); bLast.title = "Back cover";
+  bar.append(bToc, bFirst, bPrev, label, bNext, bLast, range, bEar, bSnd);
   const toc = el("div", "fbk-toc", "<h3>Contents</h3>"), pop = el("div", "fbk-pop");
   pages.forEach((pg, i) => {
     if (!pg.dataset.title) return;
@@ -1010,9 +1035,42 @@ function FlipBook(root, opts) {
     book.style.transform = "translateX(" + tx + "px)";
     label.textContent = single ? (p + 1) + " / " + P : f === 0 ? "Cover" : f === S ? "Back cover" : (2 * f) + " – " + (2 * f + 1) + " / " + P;
     bPrev.disabled = p === 0; bNext.disabled = single ? p === P - 1 : f === S;
+    bFirst.disabled = bPrev.disabled; bLast.disabled = bNext.disabled;
     range.value = f;
-    if (!quiet) { hush(); closePop(); if (opts.onChange) opts.onChange(p, visible()); }
+    if (!quiet) { hush(); closePop(); if (p !== lastP) flipSound(); if (opts.onChange) opts.onChange(p, visible()); }
+    lastP = p;
   }
+  // The sound of a page turning. It is made here from filtered noise, so no audio file is loaded,
+  // and it plays only after the reader has touched the page (browsers allow no sound before that).
+  let actx = null, soundOn = true, lastP = 0;
+  try { soundOn = localStorage.getItem("lifebook-sound") !== "off"; } catch (e) {}
+  function flipSound() {
+    if (!soundOn) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC || (navigator.userActivation && !navigator.userActivation.hasBeenActive)) return;
+      actx = actx || new AC(); if (actx.state === "suspended") actx.resume();
+      const t = actx.currentTime + 0.01, dur = 0.44, n = Math.floor(actx.sampleRate * dur);
+      const buf = actx.createBuffer(1, n, actx.sampleRate), d = buf.getChannelData(0);
+      for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (0.5 + 0.5 * Math.random());
+      const src = actx.createBufferSource(); src.buffer = buf;
+      const bp = actx.createBiquadFilter(); bp.type = "bandpass"; bp.Q.value = 0.7;
+      bp.frequency.setValueAtTime(900, t); bp.frequency.exponentialRampToValueAtTime(3400, t + 0.17); bp.frequency.exponentialRampToValueAtTime(1200, t + dur);
+      const hp = actx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 500;
+      const g = actx.createGain(); // a rising swish, then the soft slap of the page landing
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.15, t + 0.06); g.gain.exponentialRampToValueAtTime(0.045, t + 0.22);
+      g.gain.exponentialRampToValueAtTime(0.13, t + 0.31); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      src.connect(bp); bp.connect(hp); hp.connect(g); g.connect(actx.destination);
+      src.start(t); src.stop(t + dur + 0.02);
+    } catch (e) {}
+  }
+  function showSnd() {
+    bSnd.innerHTML = (soundOn ? ICON.snd : ICON.mute) + "<span>Sound</span>"; bSnd.classList.toggle("is-muted", !soundOn);
+    bSnd.setAttribute("aria-pressed", soundOn ? "true" : "false"); bSnd.setAttribute("aria-label", soundOn ? "Page-turn sound is on. Turn it off" : "Page-turn sound is off. Turn it on");
+    bSnd.title = soundOn ? "Sound on" : "Sound off";
+  }
+  showSnd();
+  bSnd.onclick = () => { soundOn = !soundOn; try { localStorage.setItem("lifebook-sound", soundOn ? "on" : "off"); } catch (e) {} showSnd(); if (soundOn) flipSound(); };
   const visible = () => { const f = flips(p); return single ? [p] : [2 * f - 1, 2 * f].filter((i) => i >= 0 && i < P); };
   function go(i) { p = Math.max(0, Math.min(P - 1, i)); if (!single) p = Math.min(P - 1, flips(p) * 2); render(); }
   function next() { if (single) go(p + 1); else go(Math.min(P - 1, (flips(p) + 1) * 2)); }
@@ -1097,6 +1155,7 @@ function FlipBook(root, opts) {
     else face.classList.contains("is-back") ? prev() : next();
   });
   bPrev.onclick = prev; bNext.onclick = next;
+  bFirst.onclick = () => go(0); bLast.onclick = () => go(P - 1);
   bToc.onclick = () => toc.classList.toggle("is-open");
   stage.addEventListener("click", (e) => { if (e.target === stage) { toc.classList.remove("is-open"); closePop(); } });
   range.oninput = () => go(Math.min(P - 1, parseInt(range.value, 10) * 2));
@@ -1135,13 +1194,24 @@ function FlipBook(root, opts) {
     $("#joinBack").hidden = n === 1 || n === 5;
     $("#joinNext").textContent = n === 1 ? "Get the LifeBook" : n === 4 ? "Finish" : n === 5 ? "Open the LifeBook" : "Continue";
     var first = val("name").split(" ")[0];
-    $$("[data-hello]", form).forEach(function (h) { h.textContent = first ? "Welcome, " + first : "Welcome"; });
+    $$("[data-hello]", form).forEach(function (h) { h.textContent = first ? "Congratulations, " + first : "Congratulations"; });
     $$("[data-comma]", form).forEach(function (h) { h.textContent = first ? ", " + first : ""; });
-    err.textContent = ""; form.scrollTop = 0;
+    stopJoinVideo(); err.textContent = ""; form.scrollTop = 0;
     var f = $('[data-step="' + n + '"] .in', form); if (f && n !== 2) setTimeout(function () { f.focus({ preventScroll: true }); }, 80);
   }
   function openJoin() { if (lbo.classList.contains("is-open")) closeBook(); setStep(1); ov.classList.add("is-open"); ov.setAttribute("aria-hidden", "false"); document.body.classList.add("lb-lock"); }
-  function closeJoin() { ov.classList.remove("is-open"); ov.setAttribute("aria-hidden", "true"); document.body.classList.remove("lb-lock"); }
+  /* the welcome video plays inside the sheet, from YouTube; leaving the step stops it */
+  var jv = $("[data-join-video]", form), jvHtml = jv ? jv.innerHTML : "";
+  function stopJoinVideo() { if (jv && jv.classList.contains("is-playing")) { jv.classList.remove("is-playing"); jv.innerHTML = jvHtml; } }
+  if (jv) jv.addEventListener("click", function () {
+    if (jv.classList.contains("is-playing")) return;
+    var watch = "https://www.youtube.com/watch?v=" + encodeURIComponent(jv.dataset.joinVideo);
+    if (location.protocol !== "http:" && location.protocol !== "https:") { window.open(watch, "_blank", "noopener"); return; }
+    var f = document.createElement("iframe"); f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true; f.title = "Welcome video";
+    f.referrerPolicy = "strict-origin-when-cross-origin"; f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(jv.dataset.joinVideo) + "?autoplay=1&rel=0&playsinline=1";
+    jv.textContent = ""; jv.appendChild(f); jv.classList.add("is-playing");
+  });
+  function closeJoin() { stopJoinVideo(); ov.classList.remove("is-open"); ov.setAttribute("aria-hidden", "true"); document.body.classList.remove("lb-lock"); }
   $("#joinBack").onclick = function () { setStep(step - 1); };
   form.addEventListener("submit", function (e) {
     e.preventDefault(); $$(".in.bad", form).forEach(function (i) { i.classList.remove("bad"); });
